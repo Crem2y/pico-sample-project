@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
-include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
+set(PICO_SDK_PATH ../../pico-sdk)
+include(pico_sdk_import.cmake)
 
 get_filename_component(PROJ_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 
