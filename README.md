@@ -10,13 +10,9 @@ Scripts have been tested only on Ubuntu.
 ```
 sudo apt install cmake python3 build-essential gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
 ```
-2. Update submodules:
+2. Clone this repository and submodules:
 ```
-$ git submodule init
-$ git submodule update
-$ cd pico-sdk
-pico-sdk$ git submodule init
-pico-sdk$ git submodule update
+$ git clone --recurse-submodules https://github.com/Crem2y/pico-console.git
 ```
 3. Launch the build script:
 ```
@@ -51,7 +47,7 @@ This project is for RP2350. It might be useful to enable building both in the fu
 
 PIO functionality requires assembling the `.pio` file, so I added it with a few changes to `CMakeLists.txt`.
 
-## 라이브러리 추가
+## How to add library
 
 Copy `lib_test` from the `lib` directory, rename it to the desired library name, and rename the `*.hpp`, `*.cpp` files accordingly.
 
