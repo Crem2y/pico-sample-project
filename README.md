@@ -1,4 +1,4 @@
-# rpi-pico-sample-project
+# pico-sample-project
 
 A simple sample project for Raspberry Pi Pico (2 & W) boards.
 
