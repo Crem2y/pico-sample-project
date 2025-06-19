@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: fiam/arm-none-eabi-gcc@v1
+    - uses: carlosperate/arm-none-eabi-gcc-action@v1.10.1
 
     - name: Checkout including submodules
       uses: actions/checkout@v4
