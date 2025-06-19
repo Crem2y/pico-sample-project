@@ -9,23 +9,31 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build_blink_w:
+  build:
+    strategy:
+        fail-fast: false
+        matrix:
+          example:
+            - 'blink_rp2350'
+            - 'blink_w'
+            - 'helloworld'
+            - 'pio_test'
     runs-on: ubuntu-latest
 
     steps:
     - uses: carlosperate/arm-none-eabi-gcc-action@v1.10.1
 
-    - name: Checkout including submodules
+    - name: Checkout pico-sdk
       uses: actions/checkout@v4
       with:
         submodules: recursive
 
     - name: Configure CMake
-      run: mkdir ${{github.workspace}}/blink_w/build ;
-           cd ${{github.workspace}}/blink_w/build &&
+      run: mkdir ${{github.workspace}}/${{matrix.sdk_version}}/build ;
+           cd ${{github.workspace}}/${{matrix.sdk_version}}/build &&
            cmake ..
 
     - name: Build
-      working-directory: ${{github.workspace}}/blink_w/build
+      working-directory: ${{github.workspace}}/${{matrix.sdk_version}}/build
       run: make
 
