@@ -29,11 +29,11 @@ jobs:
         submodules: recursive
 
     - name: Configure CMake
-      run: mkdir ${{github.workspace}}/${{matrix.sdk_version}}/build ;
-           cd ${{github.workspace}}/${{matrix.sdk_version}}/build &&
+      run: mkdir ${{github.workspace}}/${{matrix.example}}/build ;
+           cd ${{github.workspace}}/${{matrix.example}}/build &&
            cmake ..
 
     - name: Build
-      working-directory: ${{github.workspace}}/${{matrix.sdk_version}}/build
+      working-directory: ${{github.workspace}}/${{matrix.example}}/build
       run: make
 
