@@ -1,5 +1,7 @@
 # pico-sample-project
 
+[![Build test](https://github.com/Crem2y/pico-sample-project/actions/workflows/build_test.yml/badge.svg)](https://github.com/Crem2y/pico-sample-project/actions/workflows/build_test.yml)
+
 A simple sample project for Raspberry Pi Pico (2 & W) boards.
 
 Scripts have been tested only on Ubuntu.
